@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding-top: 50px;
+      }
+      nav a.active {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body class="container">
+    <header>
+      <nav>
+        <a href="/" class="<%= activePage === 'home' ? 'active' : '' %>"
+          >Home</a
+        >
+        |
+        <a href="/syntax" class="<%= activePage === 'syntax' ? 'active' : '' %>"
+          >Syntax</a
+        >
+        |
+        <a
+          href="/students"
+          class="<%= activePage === 'students' ? 'active' : '' %>"
+          >Students</a
+        >
+      </nav>
+    </header>
+
