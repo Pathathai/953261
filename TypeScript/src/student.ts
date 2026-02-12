@@ -19,21 +19,22 @@
 
 //const fs = require("fs");
 import * as fs from "fs";
+import type { Student } from "./modals/student.ts";
 
-type Student = {
-  id: number;
-  name: string;
-  grade: number;
-  isActive: boolean;
-};
+// type Student = {
+//   id: number;
+//   name: string;
+//   grade: number;
+//   isActive: boolean;
+// };
 
-const raw = fs.readFileSync("data/students.json", "utf-8");
+const raw = fs.readFileSync("./src/data/students.json", "utf-8");
 const students: Student[] = JSON.parse(raw);
 
 const topStudents = students.filter((s) => s.grade >= 3.0);
 console.log("Top students:", topStudents);
 
 const topJson = JSON.stringify(topStudents, null, 2);
-fs.writeFileSync("data/top-students.json", topJson);
+fs.writeFileSync("./src/data/top-students.json", topJson);
 
 console.log("top-students.json written!");

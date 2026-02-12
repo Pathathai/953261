@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head', { title: "Fruit Detail" }) %>
+  </head>
+  <body class="container">
+    <header><%- include('partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h1>Fruit Detail Page</h1>
+        <p>This is the detail page for fruits.</p>
+        <p>Name: <%= fruit.name %></p>
+        <p>Color: <%= fruit.color %></p>
+        <p>Description: <%= fruit.description %></p>
+      </div>
+    </main>
+
+    <footer><%- include('partials/footer'); %></footer>
+  </body>
+</html>

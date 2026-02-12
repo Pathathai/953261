@@ -30,7 +30,9 @@ app.get("/students", (req: Request, res: Response) => {
 app.get("/students/:id", (req: Request, res: Response) => {
   const id = Number(req.params.id);
   const student = students.find(s => s.id === id);
-
+ if (!student) {
+    return res.status(404).send("Student not found");
+  } 
   res.render("student-detail", {
     title: "Student Detail",
     activePage: "students",

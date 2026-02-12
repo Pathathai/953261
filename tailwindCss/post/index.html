@@ -1,0 +1,36 @@
+<!-- Create post/index.html with:
+•	Title: Send Message (POST)
+•	Text input (placeholder: “Type a message…”)
+•	Button: Send
+•	Status text area
+•	Output area to show JSON response
+Minimum IDs:
+•	msg
+•	btnSend
+•	status
+•	output -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="app.js" defer></script>
+    <title>Document</title>
+</head>
+<body class="bg-gray-50">
+    <div class="mt-10">
+      <div class="max-w-md mx-auto bg-white rounded-xl border border-gray-200 p-6">
+        <h1 class="text-2xl font-bold mb-4">Send Message (POST)</h1>
+        <input id="msg" type="text" placeholder="Type a message..." class="w-full p-2 border border-gray-300 rounded mb-4">
+        <button id="btnSend" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Send
+        </button>
+        <div id="status" class="mt-4 text-gray-600">...</div>
+        <div id="output" class="mt-4 hidden">
+        </div>
+      </div>
+    </div>
+</body>
+</html>

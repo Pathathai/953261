@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title><%= title %></title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body { padding-top:50px; }
+</style>
+</head>
+<body class="container">
+<main>
+  <div class="jumbotron">
+    <h1>Hello World</h1>
+    <p>Here’s the main template using EJS</p>
+    <ul>
+      <% fruits.forEach((fruit) => { %>
+      <li><%= fruit.name %> is <%= fruit.color %></li>
+      <% }); %>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
