@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+<h1 class="text-4xl">Compose</h1>
+<form action="/compose" method="post">
+    <label for="title">Title</label><br>
+  <input class="border border-gray-300 rounded-md p-2" size="20" type="text" name="postTitle" placeholder="Title" required>
+  <br>
+  <label for="message">Message</label><br>
+  <textarea class="border border-gray-300 rounded-md p-2" name="postBody" rows="10" cols="100" placeholder="Write your post here..." required></textarea>
+  <br>
+  <button class="bg-emerald-500 px-4 py-2 rounded-md text-white hover:bg-emerald-600" type="submit">Publish</button>
+</form>
+<%- include("partials/footer") %>
