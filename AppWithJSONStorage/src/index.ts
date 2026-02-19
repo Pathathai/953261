@@ -1,11 +1,6 @@
 import express from "express";
 import path from "path";
-import {
-  getAllItems,
-  addItem,
-  getItem,
-  getItemsByName
-} from './services/fileDb';
+import { getAllItems, addItem, getItem, getItemsByName } from './services/fileDb';
 
 const app = express();
 const PORT = 3000;
