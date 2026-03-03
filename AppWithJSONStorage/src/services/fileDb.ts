@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
+const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), "data");
+fs.mkdirSync(DATA_DIR, { recursive: true });
 
-const dbFilePath = path.join(process.cwd(),"data", "items.json");
+const dbFilePath = path.join(DATA_DIR, "items.json");
+
 type Item = {
   id: number;
   name: string;

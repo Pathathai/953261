@@ -3,7 +3,8 @@ import path from "path";
 import { getAllItems, addItem, getItem, getItemsByName } from './services/fileDb';
 
 const app = express();
-const PORT = 3000;
+// ✅ Render provides PORT via env var
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
