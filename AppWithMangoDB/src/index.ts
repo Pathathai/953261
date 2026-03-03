@@ -32,22 +32,16 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.cwd(), "public")));
+app.set("view engine", "ejs");
+app.set("views", path.join(process.cwd(), "src","views"));
+
 
 const USERS = [
   { username: "admin", password: "1234" },
   { username: "user", password: "1234" },
 ];
 
-app.get("/login", (req, res) => {
-  res.send(`
-    <h1>Login</h1>
-    <form method="post" action="/login">
-      <input name="username" placeholder="username" />
-      <input name="password" type="password" placeholder="password" />
-      <button type="submit">Login</button>
-    </form>
-  `);
-});
+
 
 app.post("/login", (req: any, res) => {
   const { username, password } = req.body;
@@ -71,8 +65,9 @@ app.get("/product", requireLogin, (req, res) => {
     <form method="post" action="/logout"><button>Logout</button></form>
   `);
 });
-app.get("/", (req, res) => {
-  res.sendFile(path.join(process.cwd(), "public", "index.html"));
+app.get("/login", (req, res) => {
+  const error = req.query.error ? true : false;
+  res.render("login", { error });
 });
 
 app.get("/items", async (req, res) => {
